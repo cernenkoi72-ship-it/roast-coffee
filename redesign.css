@@ -1,0 +1,93 @@
+/* CHERNENKO SITES / ROAST — tactile editorial ecommerce redesign.
+   Catalog, cart, sorting, delivery and demo checkout stay in script.js. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--cream:#F1ECE1;--paper:#FBF8F0;--brown:#30261E;--muted:#756D61;--orange:#CA603B;--line:#CFC5B5}
+html{scroll-padding-top:95px}body{font-family:"DM Sans","Segoe UI",Arial,sans-serif;background:var(--cream);color:var(--brown)}
+::selection{background:#D9A987;color:#30261E}
+.container{width:min(1350px,calc(100% - 88px))}
+.header{background:rgba(248,244,234,.96);border-bottom:1px solid #D3C6B4;box-shadow:none}
+.header-inner{min-height:100px}
+.logo,.footer-logo{font-family:"Space Grotesk","Arial",sans-serif;font-weight:700;letter-spacing:-.095em;font-size:39px}
+.logo span,.footer-logo span{color:#CA603B}
+.header nav{gap:38px}.header nav a{font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.cart-open{padding:15px 19px;border:1px solid #4E4338;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.cart-open span{background:#CA603B;width:27px;height:27px}
+.hero{border-bottom:1px solid #B8A994;background:#EEE8DD}
+.hero-grid{min-height:740px;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:50px}
+.hero-content{padding:85px 10px 55px 0;min-width:0;position:relative}
+.eyebrow{font-size:11px;letter-spacing:.21em;color:#A44B30}
+.hero h1{font-family:"Space Grotesk",Impact,sans-serif;font-size:clamp(69px,7.4vw,122px);font-weight:700;letter-spacing:-.082em;line-height:.94;margin:39px 0 28px}
+.hero h1 em{color:#B84C2C}
+.hero-content>p{font-size:18px;line-height:1.85;color:#6B6055;max-width:500px}
+.button{font-size:12px;text-transform:uppercase;letter-spacing:.075em;border-radius:2px;padding:20px 24px;gap:26px}
+.button-dark{background:#36281F;color:#FCF5E9;border-color:#36281F}
+.button-dark:hover:not(:disabled){background:#B9502F;border-color:#B9502F}
+.hero-content .button{margin-top:8px}
+.hero-note{border-top:1px solid #C8B9A5;padding-top:22px;margin-top:auto;letter-spacing:.16em}
+.hero-art{min-height:740px;background:radial-gradient(ellipse at 50% 30%,#E7C69E 0%,#D5A174 56%,#B87651 100%);border-left:1px solid #D2B38D}
+.hero-circle{width:610px;height:610px;border-color:#ffffff82;box-shadow:0 0 0 70px #ffffff17,0 0 0 145px #ffffff0e}
+.hero-bag{width:315px;height:432px;transform:rotate(-9deg);box-shadow:inset 14px 0 15px #00000024,inset -10px 0 15px #00000024,35px 50px 60px #4c271b5c}
+.hero-bag .bag-brand{font-family:"Space Grotesk",sans-serif;font-size:40px;letter-spacing:-.075em}
+.hero-bag .bag-name{font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:-.06em;font-size:45px}
+.hero-stamp{font-size:10px;letter-spacing:.16em;color:#714B34}
+.hero-art-caption{color:#57341E;letter-spacing:.13em}
+.ticker{background:#34291F;color:#EEDFC8}.ticker-inner{min-height:75px}.ticker span{letter-spacing:.14em}.ticker b{color:#DC9B67}
+.section{padding:108px 0;scroll-margin-top:100px}
+.section-heading{align-items:end;margin-bottom:50px}
+.section-heading h2,.about-section h2,.faq-section h2{font-family:"Space Grotesk",Impact,sans-serif;font-weight:700;font-size:clamp(56px,6.6vw,95px);line-height:1.02;letter-spacing:-.08em}
+.section-heading>p{font-size:16px;line-height:1.75}
+.catalog-section{background:#F9F6EE}
+.catalog-controls{border-top:1px solid #C7BCAA;border-bottom:1px solid #C7BCAA;padding:22px 0;gap:20px}
+.filters{gap:7px}.filter{font-size:11px;letter-spacing:.045em;padding:13px 14px;border-radius:30px;border-color:#C9BDAA;background:transparent}
+.filter:hover,.filter.active{background:#392C22;border-color:#392C22;color:#FCF8F1}
+.search-sort input,.search-sort select{background:#F0E9DD;border:1px solid #BCAE9C;border-radius:3px;padding:12px 13px}
+.search-sort input{width:190px}
+.results-count{font-size:12px;letter-spacing:.04em}
+.product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 18px}
+.product-card{background:transparent;min-width:0}
+.product-visual{height:335px;border-radius:3px;background:var(--tile);overflow:hidden}
+.product-visual::before{border-radius:50%;width:260px;height:260px;box-shadow:0 0 0 30px #ffffff1c,0 0 0 62px #ffffff13}
+.product-visual .coffee-bag{transform:rotate(-6deg);box-shadow:13px 18px 24px #22160d44}
+.product-card:hover .coffee-bag{transform:rotate(0deg) translateY(-8px)}
+.product-label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;background:rgba(249,244,236,.95);color:#473326;border-radius:2px}
+.product-info{padding:21px 2px 6px}
+.product-origin{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#A15538}
+.product-info h3{font-family:"Space Grotesk",sans-serif;font-size:24px;letter-spacing:-.055em;line-height:1.2;margin-top:10px}
+.product-info p{color:#75695B;font-size:13px;min-height:41px}
+.product-bottom{border-top:1px solid #D9CEBE;padding-top:15px;gap:7px}
+.product-bottom strong{font-size:19px;font-weight:700}
+.add-button{font-size:11px;text-transform:uppercase;letter-spacing:.07em;border:1px solid #43342A;color:#43342A;border-radius:2px;padding:12px}
+.add-button:hover{background:#C75735;border-color:#C75735;color:white}
+.empty-results{padding:60px 20px;border:1px solid #D9CEBE}
+.catalog-disclaimer{color:#796B5D;font-size:12px}
+.about-section{background:#33271F;color:#EDE2D2;padding:115px 0}
+.about-section .eyebrow{color:#D7A780}
+.about-section h2{font-size:clamp(56px,6.9vw,98px)}
+.about-section h2 em{color:#D6A27C}
+.about-copy p{color:#C8B5A3;font-size:17px;line-height:1.9}
+.about-features{border-top:1px solid #68574A}
+.about-features>div{border-bottom:1px solid #68574A}
+.about-features strong{color:#DDAF8B}
+.about-features span{color:#E3D5C3}
+.faq-section{background:#E6DFD3}
+.faq-items details{border-color:#BCAC96}
+.faq-items summary{font-size:17px}
+.faq-items details p{color:#685F55}
+.footer{background:#2B211B;color:#EEE3D5;border-top:none}
+.footer p{color:#C4B6A7}.footer a{color:#EFD9C0}
+.overlay{background:#1F1712CD}
+.cart-drawer{background:#FAF5EB;width:min(520px,100%)}
+.cart-header,.cart-footer{background:#FBF7F0}
+.cart-header h2,.dialog-head h2{font-family:"Space Grotesk",sans-serif;font-size:30px;letter-spacing:-.06em}
+.cart-item-info h3{font-family:"Space Grotesk",sans-serif}
+.cart-line{font-size:13px}.cart-total strong{font-size:23px}
+.checkout-button{width:100%}
+.order-dialog{background:#FBF7EF;border:1px solid #C8B6A2;border-radius:4px}
+.order-dialog textarea{background:#F3EBDD}
+.toast{background:#34281E;color:#F8EADD}
+:where(a,button,input,select,textarea,summary):focus-visible{outline:3px solid #D55E36!important;outline-offset:4px}
+@media(max-width:1100px){.container{width:calc(100% - 60px)}.hero-grid{gap:18px}.hero h1{font-size:clamp(68px,7.7vw,92px)}.hero-art,.hero-grid{min-height:630px}.product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:850px){.hero-grid,.about-grid,.faq-grid{grid-template-columns:1fr}.hero-grid{gap:0}.hero-content{padding:67px 0 55px}.hero h1{font-size:clamp(73px,11.5vw,110px)}.hero-art{min-height:520px;border-left:0}.section{padding:80px 0}.section-heading{gap:18px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-grid{gap:45px}.faq-grid{gap:30px}}
+@media(max-width:600px){.container{width:calc(100% - 36px)}.header-inner{min-height:80px;gap:10px}.header nav{display:none}.logo{font-size:31px}.cart-open{padding:10px 12px;gap:9px}.hero-content{padding:54px 0 47px}.hero h1{font-size:clamp(62px,12.5vw,83px);margin:26px 0}.hero-content>p{font-size:15px;line-height:1.7}.hero-note{margin-top:40px}.hero-art{min-height:425px}.hero-bag{width:225px;height:320px}.hero-bag .bag-brand{font-size:30px}.hero-bag .bag-name{font-size:34px}.hero-circle{width:420px;height:420px}.section{padding:67px 0}.section-heading h2,.about-section h2,.faq-section h2{font-size:clamp(54px,12vw,74px)}.catalog-controls{gap:15px}.filters{gap:6px}.filter{padding:10px 12px;font-size:11px}.search-sort{width:100%}.search-sort input{width:55%}.search-sort select{width:45%}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 12px}.product-visual{height:220px}.product-visual .coffee-bag{transform:scale(.77) rotate(-5deg)}.product-card:hover .coffee-bag{transform:scale(.77) translateY(-6px)}.product-info h3{font-size:19px}.product-info p{font-size:11px}.product-bottom{align-items:flex-start}.product-bottom strong{font-size:17px}.add-button{font-size:10px;padding:10px 6px}.cart-header,.cart-footer{padding:20px}.cart-items{padding:14px 20px}.footer-inner{gap:30px}}
+@media(max-width:375px){.product-grid{grid-template-columns:1fr}.product-visual{height:320px}.product-visual .coffee-bag{transform:rotate(-5deg)}.hero h1{font-size:60px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
