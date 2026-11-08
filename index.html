@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="ROAST. — демонстрационный интернет-магазин зернового кофе.">
+
+  <meta name="theme-color" content="#f6f0e5">
+  <title>ROAST. — Coffee Store</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#top" class="logo">ROAST<span>.</span></a>
+
+      <nav aria-label="Навигация">
+        <a href="#catalog">Каталог</a>
+        <a href="#about">О магазине</a>
+        <a href="#faq">Вопросы</a>
+      </nav>
+
+      <button class="cart-open" id="cartOpen"
+              type="button" aria-haspopup="dialog">
+        Корзина
+        <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+          <span class="eyebrow">SPECIALTY COFFEE / DEMO STORE</span>
+
+          <h1>
+            КОФЕ,<br>
+            КОТОРЫЙ<br>
+            <em>ПОМНЯТ.</em>
+          </h1>
+
+          <p>
+            Разные характеры, разные страны,
+            один ритуал. Найди зерно под своё настроение.
+          </p>
+
+          <a href="#catalog" class="button button-dark">
+            Смотреть коллекцию <span>↗</span>
+          </a>
+
+          <div class="hero-note">
+            <span>01 — 08</span>
+            <span>ВКУС НАЧИНАЕТСЯ С ЗЕРНА</span>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Иллюстрация упаковки кофе">
+          <div class="hero-circle"></div>
+          <span class="hero-stamp">FRESHLY ROASTED / CONCEPT</span>
+
+          <div class="coffee-bag hero-bag"
+               style="--bag:#543226;--ink:#f4ddab;">
+            <div class="bag-top"></div>
+            <span class="bag-brand">ROAST.</span>
+            <span class="bag-symbol">✳</span>
+            <span class="bag-name">DAILY<br>RITUAL</span>
+            <span class="bag-bottom">SPECIALTY COFFEE · 250 G</span>
+          </div>
+
+          <span class="hero-art-caption">
+            КАЖДОЕ УТРО — НОВАЯ ИСТОРИЯ.
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="container ticker-inner">
+        <span>FRESH ROAST</span>
+        <b>✳</b>
+        <span>BETTER MORNINGS</span>
+        <b>✳</b>
+        <span>GOOD COFFEE</span>
+        <b>✳</b>
+        <span>ROAST.</span>
+      </div>
+    </div>
+
+    <section class="section catalog-section" id="catalog">
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">01 / КОЛЛЕКЦИЯ</span>
+            <h2>НАЙДИ<br><em>СВОЙ ВКУС.</em></h2>
+          </div>
+
+          <p>
+            Восемь характеров в одной коллекции.
+            Выбирай по обжарке, аромату и настроению.
+          </p>
+        </div>
+
+        <div class="catalog-controls">
+          <div class="filters" id="filters"
+               aria-label="Фильтр по обжарке">
+            <button type="button" class="filter active"
+                    data-filter="all" aria-pressed="true">
+              Все
+            </button>
+            <button type="button" class="filter"
+                    data-filter="light" aria-pressed="false">
+              Светлая
+            </button>
+            <button type="button" class="filter"
+                    data-filter="medium" aria-pressed="false">
+              Средняя
+            </button>
+            <button type="button" class="filter"
+                    data-filter="dark" aria-pressed="false">
+              Тёмная
+            </button>
+            <button type="button" class="filter"
+                    data-filter="decaf" aria-pressed="false">
+              Без кофеина
+            </button>
+          </div>
+
+          <div class="search-sort">
+            <label for="searchInput" class="visually-hidden">
+              Поиск кофе
+            </label>
+            <input type="search" id="searchInput"
+                   placeholder="Поиск кофе...">
+
+            <label for="sortSelect" class="visually-hidden">
+              Сортировка товаров
+            </label>
+            <select id="sortSelect">
+              <option value="default">По умолчанию</option>
+              <option value="low">Сначала дешевле</option>
+              <option value="high">Сначала дороже</option>
+              <option value="name">По названию</option>
+            </select>
+          </div>
+        </div>
+
+        <p class="results-count" id="resultsCount"
+           aria-live="polite"></p>
+
+        <div class="product-grid" id="productGrid"></div>
+
+        <p class="catalog-disclaimer">
+          Все товары, характеристики и цены демонстрационные.
+          Реальные продажи не осуществляются.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="container about-grid">
+
+        <div>
+          <span class="eyebrow">02 / ФИЛОСОФИЯ</span>
+          <h2>НЕ ПРОСТО<br>ЧАШКА <em>КОФЕ.</em></h2>
+        </div>
+
+        <div class="about-copy">
+          <p>
+            ROAST. — концепция магазина для людей,
+            которым интересен вкус кофе:
+            от лёгких фруктовых оттенков
+            до насыщенных шоколадных нот.
+          </p>
+
+          <div class="about-features">
+            <div>
+              <strong>01</strong>
+              <span>Разные профили обжарки</span>
+            </div>
+            <div>
+              <strong>02</strong>
+              <span>Понятное описание вкусов</span>
+            </div>
+            <div>
+              <strong>03</strong>
+              <span>Простой выбор и оформление</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="container faq-grid">
+        <div>
+          <span class="eyebrow">03 / ВОПРОСЫ</span>
+          <h2>GOOD COFFEE.<br><em>NO QUESTIONS?</em></h2>
+        </div>
+
+        <div class="faq-items">
+          <details>
+            <summary>Как подобрать степень обжарки?</summary>
+            <p>
+              Светлая обычно подчёркивает кислотность
+              и фруктовые оттенки, тёмная — более
+              насыщенный и горький профиль.
+            </p>
+          </details>
+
+          <details>
+            <summary>Можно ли оформить настоящий заказ?</summary>
+            <p>
+              Нет. Это демонстрационный интернет-магазин.
+              Корзина работает, но заказ не отправляется.
+            </p>
+          </details>
+
+          <details>
+            <summary>Как рассчитывается доставка?</summary>
+            <p>
+              В демоверсии доставка стоит 350 ₽,
+              а при сумме товаров от 3 500 ₽
+              становится бесплатной.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">ROAST<span>.</span></div>
+      <p>
+        Демонстрационный проект для портфолио.<br>
+        Вымышленный магазин. © 2026
+      </p>
+      <a href="#top">Наверх ↑</a>
+    </div>
+  </footer>
+
+  <!-- КОРЗИНА -->
+
+  <div class="overlay" id="overlay" hidden></div>
+
+  <aside class="cart-drawer" id="cartDrawer"
+         role="dialog" aria-modal="true"
+         aria-hidden="true" aria-labelledby="cartTitle">
+
+    <div class="cart-header">
+      <h2 id="cartTitle">ТВОЯ КОРЗИНА</h2>
+      <button type="button" id="cartClose"
+              aria-label="Закрыть корзину">✕</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+      <div class="cart-line">
+        <span>Товары</span>
+        <strong id="subtotal">0 ₽</strong>
+      </div>
+
+      <div class="cart-line">
+        <span>Доставка</span>
+        <strong id="shipping">0 ₽</strong>
+      </div>
+
+      <p id="shippingMessage" class="shipping-message"></p>
+
+      <div class="cart-line cart-total">
+        <span>Итого</span>
+        <strong id="grandTotal">0 ₽</strong>
+      </div>
+
+      <button class="button button-dark checkout-button"
+              id="checkoutButton" type="button" disabled>
+        Подготовить демо-заказ ↗
+      </button>
+
+      <small>
+        Сайт демонстрационный.
+        Оплата и отправка заказа не выполняются.
+      </small>
+    </div>
+
+  </aside>
+
+  <!-- РЕЗУЛЬТАТ ЗАКАЗА -->
+
+  <dialog id="orderDialog" class="order-dialog">
+    <div class="dialog-head">
+      <h2>ЗАКАЗ ГОТОВ</h2>
+      <button type="button" id="orderClose"
+              aria-label="Закрыть окно">✕</button>
+    </div>
+
+    <p>
+      Это демонстрационный заказ.
+      Ничего не оплачено и никуда не отправлено.
+    </p>
+
+    <label for="orderText">Текст заказа</label>
+    <textarea id="orderText" rows="12" readonly></textarea>
+
+    <button type="button" class="button button-dark"
+            id="copyOrder">
+      Скопировать заказ
+    </button>
+
+    <p id="copyStatus" role="status"></p>
+  </dialog>
+
+  <div class="toast" id="toast" role="status"
+       aria-live="polite"></div>
+
+</body>
+</html>
